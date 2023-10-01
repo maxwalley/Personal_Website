@@ -9,14 +9,9 @@ function App() {
         <p>
           Hello Bun and React!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>
+          Current time is {Math.floor(Date.now() / 1000)}
+        </p>
       </header>
     </div>
   );
