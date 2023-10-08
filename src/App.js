@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import copyIcon from './icons8-copy-24.png';
 
 import { Component } from 'react';
 
@@ -13,6 +14,7 @@ function App() {
         </p>
         <TimestampDisplay />
       </header>
+      <a href="https://icons8.com/icon/86206/copy">Copy icon by icons8</a>
     </div>
   );
 }
@@ -45,7 +47,7 @@ class TimestampDisplay extends Component {
           Current time is {Math.floor(this.state.time / 1000)}
         </p>
         <button onClick={this.onCopyButtonClick.bind(this)}>
-          Copy
+          <img src={copyIcon} alt="Copy timestamp" />
         </button>
       </div>
     );
