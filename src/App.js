@@ -24,7 +24,9 @@ class TimestampDisplay extends Component {
     this.state = {
       time: Date.now()
     };
+  }
 
+  componentDidMount() {
     this.interval = setInterval(() => {
       this.setState(state => ({
         time: Date.now()
@@ -38,10 +40,19 @@ class TimestampDisplay extends Component {
 
   render() {
     return(
-      <p>
-        Current time is {Math.floor(this.state.time / 1000)}
-      </p>
+      <div>
+        <p>
+          Current time is {Math.floor(this.state.time / 1000)}
+        </p>
+        <button onClick={this.onCopyButtonClick.bind(this)}>
+          Copy
+        </button>
+      </div>
     );
+  }
+
+  onCopyButtonClick() {
+    navigator.clipboard.writeText(this.state.time);
   }
 }
 
